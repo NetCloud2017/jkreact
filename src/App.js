@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 // import logo from "./logo.svg";
-// import "./App-css-in.js";
+import "./App.css";
 //  样式复用： 
 const divStyle = css`
 	width: 150px;
@@ -47,7 +47,7 @@ function App() {
 				background-color: yellow;
 			}
 		`}></div>
-		<div css={[divStyle, divStyle2]}>hello world</div>
+		<div className="text" css={[divStyle, divStyle2]}>hello world</div>
 		<div></div>
     </div>
   );
