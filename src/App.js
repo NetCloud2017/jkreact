@@ -8,6 +8,11 @@ const divStyle = css`
 	height:  150px;
 	background-color: blue;
 `
+const divStyle2 = css`
+	font-size: 18px;
+	font-weight: 550;
+	color: black;
+`
 function App() {
   return (
     <div css={
@@ -42,10 +47,9 @@ function App() {
 				background-color: yellow;
 			}
 		`}></div>
-		<div></div>
+		<div css={[divStyle, divStyle2]}>hello world</div>
 		<div></div>
     </div>
   );
 }
-
 export default App;
