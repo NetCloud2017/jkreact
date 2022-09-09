@@ -2,7 +2,12 @@
 import { css } from "@emotion/react";
 // import logo from "./logo.svg";
 // import "./App-css-in.js";
-
+//  样式复用： 
+const divStyle = css`
+	width: 150px;
+	height:  150px;
+	background-color: blue;
+`
 function App() {
   return (
     <div css={
@@ -29,8 +34,14 @@ function App() {
 	}>
 		<div></div>
 		<div></div>
-		<div></div>
-		<div></div>
+		<div css={divStyle}> </div>
+		{/* 样式组合  */}
+		<div css={css`
+			${divStyle}
+			&:hover {
+				background-color: yellow;
+			}
+		`}></div>
 		<div></div>
 		<div></div>
     </div>
