@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
+import { css, Global } from "@emotion/react";
 import { useState } from "react";
 // import logo from "./logo.svg";
 import "./App.css";
@@ -26,9 +26,11 @@ function App() {
         height: 500px;
         background-color: aliceblue;
         display: flex;
-        justify-content: space-between;
-        /* flex-flow: column nowrap; */
-
+        justify-content: flex-start;
+        flex-flow: row wrap;
+		& > div {
+			margin: 0 5px;
+		}
         /* 嵌套子样式*/
         & > div:nth-of-type(1) {
           width: 50px;
@@ -44,7 +46,7 @@ function App() {
     >
       <div></div>
       <div></div>
-      <div css={divStyle}> </div>
+      <div css={divStyle}></div>
       {/* 样式组合  */}
       <div
         css={css`
@@ -56,7 +58,7 @@ function App() {
       ></div>
       <div
         onMouseEnter={() => {
-			console.log(123);
+          console.log(123);
           setColorState("green");
         }}
         onMouseLeave={() => {
@@ -66,9 +68,21 @@ function App() {
         css={[divStyle, divStyle2]}
       >
         hello world
-        <Child fontColor={fontColor} />
+        <Child css={css`
+			font-weight: 600;
+		`} fontColor={fontColor}/>
       </div>
-      <div></div>
+	  <Global styles={
+		css`
+			.globalFont {	
+				font-size: 20px;
+				color: black;
+				word-spacing: 2px;
+				border: 1px solid #000;
+			}
+		`
+	  }/>
+      <div className="globalFont"> use global font style</div>
     </div>
   );
 }
