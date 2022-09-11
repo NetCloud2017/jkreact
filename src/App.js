@@ -5,6 +5,7 @@ import { useState } from "react";
 import "./App.css";
 
 import { Child } from "./child";
+import { Button } from "./components/button";
 //  样式复用：
 const divStyle = css`
   width: 150px;
@@ -122,6 +123,8 @@ function App() {
             background-color: white;
           `}
         ></div>
+
+		<Button primary/>
       </div>
     </div>
   );
