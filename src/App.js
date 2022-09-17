@@ -6,6 +6,8 @@ import "./App.css";
 
 import { Child } from "./child";
 import { Button } from "./components/button";
+
+
 //  样式复用：
 const divStyle = css`
   width: 150px;
@@ -111,7 +113,7 @@ function App() {
           width: 100px;
           height: 100px;
           background-color: black;
-		  margin-left: 10px;
+          margin-left: 10px;
         `}
       >
         <div
@@ -124,7 +126,7 @@ function App() {
           `}
         ></div>
 
-		<Button primary/>
+        <Button primary />
       </div>
     </div>
   );
