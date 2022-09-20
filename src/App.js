@@ -6,7 +6,7 @@ import "./App.css";
 
 import { Child } from "./child";
 import { Button } from "./components/button";
-
+import { UseEffectTest } from "./hooks/UseEffect";
 
 //  样式复用：
 const divStyle = css`
@@ -128,6 +128,8 @@ function App() {
 
         <Button primary />
       </div>
+      {/* useEffect */}
+      <UseEffectTest />
     </div>
   );
 }

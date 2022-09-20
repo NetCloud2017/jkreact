@@ -2,7 +2,7 @@
 import { css } from "@emotion/react";
 
 export function Child({ children, fontColor }) {
-    console.log(fontColor, 222);
+    // console.log(fontColor, 222);
   return (
     <div
       css={css`
