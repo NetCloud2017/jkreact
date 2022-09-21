@@ -6,13 +6,13 @@ export function HooksTest() {
   let [showEffect, setShowEffect] = useState(true);
   return (
     <>
-      <MemoWrap />
+      {/* <MemoWrap /> */}
 
       {/* useEffect */}
-      <button onClick={() => setShowEffect(!showEffect)}>
+      {/* <button onClick={() => setShowEffect(!showEffect)}>
         trigger useEffect 测试组件
       </button>
-      {showEffect && <UseEffectTest />}
+      {showEffect && <UseEffectTest />} */}
 
       {/* use CallBack */}
       <UseCallback />
