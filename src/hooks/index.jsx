@@ -2,6 +2,7 @@ import { useState } from "react";
 import { MemoWrap } from "./Memo";
 import { UseEffectTest } from "./UseEffect";
 import { UseCallback } from "./UseCallback";
+import { UseMemo } from "./UseMemo";
 export function HooksTest() {
   let [showEffect, setShowEffect] = useState(true);
   return (
@@ -15,7 +16,8 @@ export function HooksTest() {
       {showEffect && <UseEffectTest />} */}
 
       {/* use CallBack */}
-      <UseCallback />
+      {/* <UseCallback /> */}
+	  <UseMemo />
     </>
   );
 }
