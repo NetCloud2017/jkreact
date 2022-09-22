@@ -1,7 +1,9 @@
+import { useMemo } from "react";
 import { useReducer } from "react";
 
 export function UseReducer(props) {
   const reducer = (state, action) => {
+    console.log(action, state, "action");
     switch (action.type) {
       case "update":
         return {
@@ -9,7 +11,7 @@ export function UseReducer(props) {
           loading: false,
         };
       default:
-        return state;
+        return { ...state, data: action.data };
     }
   };
 
@@ -22,16 +24,19 @@ export function UseReducer(props) {
     data: null,
     something: "",
   });
-  // 触发
-  dispatch({ loading: false });
+  console.log("rerender , ");
+  const memoState = useMemo(() => state, [state]);
   return (
     <div>
-      {JSON.stringify(state)}
+      使用 useReducer Hook
+      {JSON.stringify(memoState)}
       <button
         onClick={() => {
-          dispatch({ data: "hello world" });
+          dispatch({ type: "data", data: "hello world" });
         }}
-      ></button>
+      >
+        更新 useReducer 状态
+      </button>
     </div>
   );
 }
