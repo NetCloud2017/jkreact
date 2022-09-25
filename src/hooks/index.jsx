@@ -4,6 +4,7 @@ import { UseEffectTest } from "./UseEffect";
 import { UseCallback } from "./UseCallback";
 import { UseMemo } from "./UseMemo";
 import { UseReducer } from "./UseReducer";
+import { TestCustomHook } from "./customHooks";
 export function HooksTest() {
   let [showEffect, setShowEffect] = useState(true);
   return (
@@ -20,6 +21,7 @@ export function HooksTest() {
       {/* <UseCallback /> */}
       <UseMemo />
       <UseReducer />
+      <TestCustomHook />
     </>
   );
 }
