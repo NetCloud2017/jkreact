@@ -1,5 +1,3 @@
 export function getList(pramas) {
-  return console.log(
-    'hello world'
-  );
+  return console.log("hello world");
 }
