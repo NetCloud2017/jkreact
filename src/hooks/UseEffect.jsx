@@ -12,33 +12,38 @@ export function UseEffectTest(props) {
   //   });
 
   //   useEffect(function () {
-  // 	// 在render 执行之后执行， 18 react 之前执行一次 ， 18之后执行 两次。
+  //     // 在render 执行之后执行， 18 react 之前执行一次 ， 18之后执行 两次。
   //     console.log("[] useEffect");
   //   }, []);
 
-    useEffect(
-      function () {
-  		// 以18 react strictMode 下 为例： 初始 render 后执行 2次 ， 之后当count 更改render 后执行一次。
-        console.log("count useEffect");
-      },
-      [count, count2]
-    );
+  //   useEffect(
+  //     function () {
+  //       // 以18 react strictMode 下 为例： 初始 render 后执行 2次 ， 之后当count 更改render 后执行一次。
+  //       console.log("count useEffect");
+  //     },
+  //     [count, count2]
+  //   );
 
   //   useEffect(
   //     function () {
   //       console.log("count2  has  change begin setInterval ");
-  // 	  // 情况同上。
+  //       // 情况同上。
   //       let timer = setInterval(() => {
   //         console.log("timer");
   //       }, 1000);
   //       return () => {
-  // 		//  在 strict mode 下render后执行一次， 在 非 strict mode下 render 后不执行。 当该组件卸载后执行一次。
-  // 		console.log('clear timer');
+  //         //  在 strict mode 下render后执行一次， 在 非 strict mode下 render 后不执行。 当该组件卸载后执行一次。
+  //         console.log("clear timer");
   //         clearInterval(timer);
   //       };
   //     },
   //     [count2]
   //   );
+
+  useEffect(function () {
+    setCount(1);
+    console.log(123);
+  });
   console.log("render");
   return (
     <div
@@ -47,7 +52,7 @@ export function UseEffectTest(props) {
         setCount((pre) => {
           return ++pre;
         });
-		setCount2(count2 +  1)
+        setCount2(count2 + 1);
       }}
       style={{
         // width: "100px",
